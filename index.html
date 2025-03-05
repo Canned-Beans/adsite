@@ -2,122 +2,181 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tech Trends Blog</title>
-  <!-- Favicon -->
   <link rel="icon" href="https://via.placeholder.com/16x16" type="image/png">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    /* Global Styles */
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      line-height: 1.6;
+      font-family: 'Roboto', sans-serif;
+      background: #e9ecef;
       color: #333;
+      line-height: 1.6;
     }
+    a {
+      text-decoration: none;
+      color: #007bff;
+      transition: color 0.3s ease;
+    }
+    a:hover {
+      color: #0056b3;
+    }
+    /* Header */
     header {
-      background: #333;
+      background: linear-gradient(45deg, #4b79a1, #283e51);
       color: #fff;
-      padding: 1rem;
+      padding: 20px 10px;
       text-align: center;
-      font-size: 2rem;
+      font-size: 2.5rem;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     }
-    /* Desktop layout: three columns with fixed-width sidebars for ads */
+    /* Navigation Bar */
+    nav {
+      background: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      padding: 10px 0;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li {
+      margin: 0 15px;
+    }
+    nav ul li a {
+      font-weight: 500;
+      font-size: 1rem;
+    }
+    /* Container */
     .container {
-      max-width: 1800px; /* Adjusted for desktop screens */
+      max-width: 1800px;
       margin: 20px auto;
       display: grid;
       grid-template-columns: 728px auto 728px;
       gap: 20px;
       padding: 0 20px;
     }
+    /* Main Content */
     .content {
       background: #fff;
-      padding: 20px;
-      border-radius: 5px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
     .content h2 {
-      font-size: 2rem;
-      margin-bottom: 10px;
+      font-size: 2.2rem;
+      margin-bottom: 15px;
+      color: #283e51;
     }
     .content p {
       font-size: 1.1rem;
       margin-bottom: 20px;
-      line-height: 1.7;
+      line-height: 1.8;
     }
     .content img {
       max-width: 100%;
-      border-radius: 5px;
-      margin-top: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
-    /* Sidebar styling for the ad areas */
+    /* Sidebar Ads */
     .sidebar {
       background: #fff;
-      padding: 10px; /* Slim padding */
-      border-radius: 5px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       display: flex;
       flex-direction: column;
       align-items: center;
     }
     .sidebar h3 {
-      font-size: 1.5rem;
-      margin-bottom: 10px;
+      font-size: 1.6rem;
+      margin-bottom: 15px;
+      color: #283e51;
     }
-    /* Ad container for spacing between multiple ads */
     .ad-container {
       margin-bottom: 20px;
+      width: 100%;
+      overflow: hidden;
     }
-    /* Preserve the original ad size */
     .ad-frame {
-      width: 728px;
-      height: auto;
+      width: 100%;
+      max-width: 728px;
     }
     .ad-frame iframe {
       width: 728px;
       height: 90px;
       border: 0;
-      padding: 0;
-      overflow: hidden;
-      background-color: transparent;
+      display: block;
     }
     .ad-frame .preview-link {
       display: block;
       text-align: right;
       font-size: 12px;
+      color: #007bff;
+      margin-top: 5px;
     }
+    /* Footer */
     footer {
-      background: #333;
+      background: linear-gradient(45deg, #283e51, #4b79a1);
       color: #fff;
       text-align: center;
-      padding: 1rem;
-      margin-top: 20px;
+      padding: 15px 10px;
+      margin-top: 40px;
     }
     footer p {
       margin: 0;
+      font-size: 1rem;
     }
-    /* Responsive adjustments: On smaller screens, stack the sidebars above and below the main content */
+    /* Responsive adjustments */
     @media (max-width: 1400px) {
       .container {
         display: block;
         max-width: 100%;
       }
-      .sidebar {
-        width: 100%;
-        margin: 20px 0;
+      .sidebar, .content {
+        margin: 20px;
       }
-      /* Allow the ad iframes to scale down while keeping their aspect ratio */
       .ad-frame, .ad-frame iframe {
         width: 100%;
         max-width: 728px;
+      }
+    }
+    @media (max-width: 768px) {
+      header {
+        font-size: 2rem;
+      }
+      nav ul li {
+        margin: 0 10px;
+      }
+      .content h2 {
+        font-size: 1.8rem;
+      }
+      .content p {
+        font-size: 1rem;
       }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Tech Trends Blog</h1>
+    Tech Trends Blog
   </header>
+  <nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Latest</a></li>
+      <li><a href="#">Categories</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
   
   <div class="container">
     <!-- Left Sidebar with Two Ads -->
@@ -136,7 +195,7 @@
         </div>
       </div>
     </div>
-
+    
     <!-- Main Blog Content -->
     <div class="content">
       <h2>The Future of Artificial Intelligence in 2025</h2>
@@ -146,7 +205,7 @@
       <img src="https://via.placeholder.com/800x400" alt="AI in Technology">
       <p>As we move forward into 2025, it’s important for both consumers and tech companies to stay informed about the potential impacts of AI. By preparing for these changes, we can make the most out of the opportunities AI has to offer while mitigating its risks.</p>
     </div>
-
+    
     <!-- Right Sidebar with Two Ads -->
     <div class="sidebar">
       <h3>Advertisement</h3>
